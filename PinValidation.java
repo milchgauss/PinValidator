@@ -3,7 +3,21 @@ import java.util.regex.*;
 class PinValidation{
 
     /** Validates pins. Pins must be 4 symbols or 6 symbols long, with a dash may or may not occurring in between!
-     PINS CANNOT BE 5 SYMBOLS LONG. Pins must contain only digits 0-9**/
+     PINS CANNOT BE 5 SYMBOLS LONG. Pins must contain only digits 0-9
+     Returns:
+     
+Pin is valid and it is 6 digits!123-455
+Pin is valid and it is 4 digits!12-34
+Pin is valid and it is 6 digits!123455
+Pin is valid and it is 4 digits!1234
+False pin! and the pin is:12345
+False pin! and the pin is:1234sssa
+False pin! and the pin is:dddddd
+False pin! and the pin is:dd-dd
+False pin! and the pin is:ddd-ddd
+     
+     
+     **/
 
     public boolean validatePin(String pin){
         Pattern p= Pattern.compile("[0-9]{2}-{0,1}[0-9]{2}");
